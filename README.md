@@ -20,4 +20,21 @@ public class MyEntity {
     // Getter와 Setter 메서드
 }
 <!------------------------------------------------------------------------------------------------------->
-▶2. 빈 클래스:
+▶2. 빈 클래스:<br>
+스프링IoC컨테이너에서 데이터를 관리하고 주입할 수 있도록 하는 Bean.<br>
+ XML 설정 파일 작성<br>
+<!-- applicationContext.xml -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- MyBean Bean 설정 -->
+    <bean id="myBean" class="com.example.beans.MyBean">
+        <property name="message" value="Hello, Spring!"/>
+    </bean>
+
+</beans><br>
+· <beans>: 루트 요소로 Spring Bean 설정을 포함하는 XML 파일을 정의합니다.<br>
+· <bean>: 각각의 Bean을 정의합니다. 여기서 id는 해당 Bean을 식별하는 고유한 이름이며, class 속성에는 Bean으로 사용될 클래스의 전체 경로가 포함됩니다.<br>
+· <property>: Bean의 속성을 설정합니다. 여기서는 message 속성을 설정하고, 해당 값은 "Hello, Spring!"입니다.<br>
